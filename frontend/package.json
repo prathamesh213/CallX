@@ -1,0 +1,13 @@
+{
+  "name": "callx-frontend",
+  "version": "1.0.0",
+  "description": "CallX - AI Voice Assistant for FAQ",
+  "scripts": {
+    "build": "cp -r css js index.html ../dist/",
+    "start": "serve ."
+  },
+  "dependencies": {
+    "callx-frontend": "file:",
+    "serve": "^14.2.1"
+  }
+}
