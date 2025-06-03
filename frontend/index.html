@@ -14,8 +14,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
                 <li class="auth-buttons">
                     <button class="login-btn">Login</button>
                     <button class="signup-btn">Sign Up</button>
@@ -27,10 +27,50 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <h1>Welcome to CallX</h1>
-                <p>Your AI-powered voice assistant for instant FAQ responses</p>
-                <button class="cta-button">Get Started</button>
-                <button class="demo-button" onclick="openUploadModal()">Upload FAQ</button>
+                <h1>CallX</h1>
+                <p class="subtitle">AI Voice Assistant for FAQ Handling</p>
+                <p class="description">Let users speak into a website and get human-like voice replies to their queries, powered by AI trained on FAQs</p>
+                <div class="cta-buttons">
+                    <button class="cta-button">Get Started</button>
+                    <button class="demo-button" onclick="openUploadModal()">Upload FAQ</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="flow-container">
+                    <div class="flow-step">
+                        <div class="step-icon">👤</div>
+                        <h3>User Speaks</h3>
+                        <p>Click mic and ask your question</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="step-icon">🧾</div>
+                        <h3>Voice to Text</h3>
+                        <p>Whisper STT converts speech</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="step-icon">📚</div>
+                        <h3>AI Processing</h3>
+                        <p>LLM finds best answer from FAQ</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="step-icon">🗣️</div>
+                        <h3>Text to Voice</h3>
+                        <p>TTS converts answer to speech</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">
+                        <div class="step-icon">🔊</div>
+                        <h3>Play Response</h3>
+                        <p>Website plays back human-like response</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -38,6 +78,10 @@
             <div class="container">
                 <h2>Features</h2>
                 <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Upload FAQ</h3>
+                        <p>Upload your FAQ as PDF or use predefined list</p>
+                    </div>
                     <div class="feature-card">
                         <h3>Voice Interaction</h3>
                         <p>Speak naturally and get instant responses</p>
@@ -47,8 +91,40 @@
                         <p>Advanced language model for accurate answers</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Easy Integration</h3>
-                        <p>Upload your FAQs in PDF format</p>
+                        <h3>Real-time Q&A</h3>
+                        <p>Instant mic input and voice reply</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="tech-stack">
+            <div class="container">
+                <h2>Tech Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>🧠 AI Reasoning</h3>
+                        <p>Ollama + Mistral 7B</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🔍 Vector Search</h3>
+                        <p>FAISS + SentenceTransformers</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>📤 PDF Parsing</h3>
+                        <p>PyMuPDF / pdfplumber</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🧾 Speech-to-Text</h3>
+                        <p>Faster-Whisper</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🗣️ Text-to-Speech</h3>
+                        <p>Coqui TTS or Piper</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🖥️ Frontend</h3>
+                        <p>React.js with Mic API</p>
                     </div>
                 </div>
             </div>
