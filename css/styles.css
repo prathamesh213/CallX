@@ -116,6 +116,10 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .hero::before {
@@ -130,16 +134,32 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    text-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero p {
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.description {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
     color: var(--text-color);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .cta-button, .demo-button {
@@ -181,23 +201,22 @@ body {
 }
 
 .feature-card {
-    background: var(--card-bg);
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 255, 157, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 255, 157, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 255, 157, 0.2);
-    border-color: var(--primary-color);
 }
 
 .feature-card h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
 }
 
 /* Footer */
@@ -223,7 +242,7 @@ body {
 }
 
 .modal-content {
-    background: var(--card-bg);
+    background: rgba(0, 0, 0, 0.95);
     border: 1px solid var(--primary-color);
     border-radius: 10px;
     padding: 2rem;
@@ -243,15 +262,108 @@ body {
 }
 
 .upload-area {
+    background: rgba(255, 255, 255, 0.1);
     border: 2px dashed var(--primary-color);
-    padding: 2rem;
+    padding: 40px;
     text-align: center;
-    margin: 1rem 0;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .upload-area:hover {
-    background: rgba(0, 255, 157, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary-color);
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.flow-step {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.flow-step:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: -10px 0;
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flow-step {
+        width: 90%;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
 } 
