@@ -60,7 +60,7 @@ callx/
 │
 ├── docker-compose.yml      # Orchestrate all
 └── README.md
-🧪 MVP Features You’ll Have
+🧪 MVP Features You'll Have
 ✅ Upload FAQ PDF or use default
 
 ✅ Ask questions via mic
@@ -86,8 +86,8 @@ TTS: Same host or separate container
 
 DB (if needed): Supabase (free PostgreSQL)
 
-🎯 Let’s Build This
-Here’s what I’ll now generate for you:
+🎯 Let's Build This
+Here's what I'll now generate for you:
 
 frontend/ folder with mic + player React UI
 
@@ -108,7 +108,7 @@ Or would you like to start one service at a time (e.g., frontend first)?
 
 Let me know with:
 
-“Start scaffold” (all folders and Docker set)
+"Start scaffold" (all folders and Docker set)
 or
 
-“Start with frontend” (if you prefer step-by-step)
+"Start with frontend" (if you prefer step-by-step)
