@@ -59,7 +59,7 @@ callx/
 ├── tts-service/            # Python: Coqui TTS (Text → Voice)
 │
 ├── docker-compose.yml      # Orchestrate all
-└── README.md
+└── README.mdc
 🧪 MVP Features You'll Have
 ✅ Upload FAQ PDF or use default
 
