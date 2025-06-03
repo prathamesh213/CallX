@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CallX - Your Communication Platform</title>
+    <title>CallX - AI Voice Assistant for FAQ</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -16,6 +16,10 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="auth-buttons">
+                    <button class="login-btn">Login</button>
+                    <button class="signup-btn">Sign Up</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -24,8 +28,9 @@
         <section id="home" class="hero">
             <div class="container">
                 <h1>Welcome to CallX</h1>
-                <p>Your next-generation communication platform</p>
+                <p>Your AI-powered voice assistant for instant FAQ responses</p>
                 <button class="cta-button">Get Started</button>
+                <button class="demo-button" onclick="openUploadModal()">Upload FAQ</button>
             </div>
         </section>
 
@@ -34,21 +39,34 @@
                 <h2>Features</h2>
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <h3>Real-time Communication</h3>
-                        <p>Connect instantly with your team</p>
+                        <h3>Voice Interaction</h3>
+                        <p>Speak naturally and get instant responses</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Secure Calls</h3>
-                        <p>End-to-end encrypted conversations</p>
+                        <h3>AI-Powered</h3>
+                        <p>Advanced language model for accurate answers</p>
                     </div>
                     <div class="feature-card">
                         <h3>Easy Integration</h3>
-                        <p>Works with your existing tools</p>
+                        <p>Upload your FAQs in PDF format</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- FAQ Upload Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeUploadModal()">&times;</span>
+            <h2>Upload Your FAQ</h2>
+            <div class="upload-area" onclick="triggerFileUpload()">
+                <p>Click to upload or drag and drop your FAQ PDF</p>
+                <input type="file" id="faqUpload" accept=".pdf" style="display: none;">
+            </div>
+            <button class="cta-button" onclick="uploadFAQ()">Upload</button>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
