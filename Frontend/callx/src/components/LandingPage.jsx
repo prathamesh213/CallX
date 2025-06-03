@@ -62,6 +62,11 @@ const FeatureIcon = styled(Box)(({ theme }) => ({
   color: theme.palette.background.paper,
 }));
 
+const StyledDivider = styled(Divider)(({ theme }) => ({
+  margin: theme.spacing(4, 0),
+  borderColor: 'rgba(255, 255, 255, 0.1)',
+}));
+
 function LandingPage() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -188,42 +193,17 @@ function LandingPage() {
               'Upload and Process'
             )}
           </Button>
-        </CardContent>
-      </Card>
 
-      {/* How it Works Section */}
-      <Box sx={{ mb: 8 }}>
-        <GradientText variant="h3" align="center" gutterBottom>
-          How It Works
-        </GradientText>
-        <Grid container spacing={4} sx={{ mt: 2 }}>
-          {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <FeatureCard>
-                <CardContent sx={{ textAlign: 'center' }}>
-                  <FeatureIcon>
-                    {feature.icon}
-                  </FeatureIcon>
-                  <Typography variant="h6" gutterBottom>
-                    {feature.title}
-                  </Typography>
-                  <Typography color="text.secondary">
-                    {feature.description}
-                  </Typography>
-                </CardContent>
-              </FeatureCard>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+          <StyledDivider>
+            <Typography color="text.secondary" sx={{ px: 2 }}>
+              OR
+            </Typography>
+          </StyledDivider>
 
-      {/* Demo FAQ Section */}
-      <Card sx={{ maxWidth: 600, mx: 'auto' }}>
-        <CardContent>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h6" gutterBottom align="center">
             Try Our Demo FAQ
           </Typography>
-          <Typography color="text.secondary" sx={{ mb: 3 }}>
+          <Typography color="text.secondary" sx={{ mb: 3 }} align="center">
             Experience CallX with our pre-loaded FAQ database
           </Typography>
           <Button
@@ -243,6 +223,32 @@ function LandingPage() {
           </Button>
         </CardContent>
       </Card>
+
+      {/* How it Works Section */}
+      <Box sx={{ mb: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <GradientText variant="h3" align="center" gutterBottom>
+          How It Works
+        </GradientText>
+        <Grid container spacing={4} sx={{ mt: 2, maxWidth: 1200, mx: 'auto' }}>
+          {features.map((feature, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <FeatureCard>
+                <CardContent sx={{ textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <FeatureIcon>
+                    {feature.icon}
+                  </FeatureIcon>
+                  <Typography variant="h6" gutterBottom>
+                    {feature.title}
+                  </Typography>
+                  <Typography color="text.secondary">
+                    {feature.description}
+                  </Typography>
+                </CardContent>
+              </FeatureCard>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Container>
   );
 }
