@@ -7,18 +7,27 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          fetch-depth: 0
+          path: './frontend'
       
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: frontend # The folder the action should deploy
-          branch: gh-pages # The branch the action should deploy to
-          token: ${{ secrets.GH_PAT }} # Use the personal access token 
+        id: deployment
+        uses: actions/deploy-pages@v2 
